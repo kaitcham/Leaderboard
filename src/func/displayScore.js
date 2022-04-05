@@ -1,11 +1,11 @@
-import { getScore } from "./leadData";
+import { getScore } from './leadData.js';
 
-const scoreBoard = document.querySelector(".leadboard-output");
+const scoreBoard = document.querySelector('.leadboard-output');
 
 export default async () => {
   const data = await getScore();
   data.sort((player1, player2) => player2.score - player1.score);
-  let scoreHTML = "";
+  let scoreHTML = '';
   data.forEach(({ user, score }) => {
     scoreHTML += `<p>${user} : &nbsp; ${score}</p>`;
   });
